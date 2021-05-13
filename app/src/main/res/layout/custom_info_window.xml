@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:layout_width="357dp"
+        android:layout_height="119dp">
+
+        <ImageView
+
+            android:id="@+id/Iconinfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_dialog_alert" />
+
+
+
+        <TextView
+            android:id="@+id/winTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="49dp"
+            android:layout_toRightOf="@+id/Iconinfo"
+            android:text="Hello"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+
+
+        <TextView
+            android:id="@+id/magnitude"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/winTitle"
+            android:layout_marginLeft="43dp"
+            android:layout_marginTop="18dp"
+            android:layout_toRightOf="@+id/Iconinfo"
+            android:text="Magnitude"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+
+
+
+        <Button
+            android:id="@+id/btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/magnitude"
+            android:layout_alignBottom="@+id/magnitude"
+            android:layout_marginLeft="6dp"
+            android:text="More info ..."
+
+
+            />
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>
