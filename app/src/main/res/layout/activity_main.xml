@@ -82,7 +82,7 @@
                         android:layout_marginTop="15dp"
                         android:layout_weight="1"
                         android:adjustViewBounds="true"
-                        android:background="@drawable/maps"
+                        android:background="@drawable/eq"
                         android:padding="20dp"
                         android:scaleType="fitCenter"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -119,8 +119,8 @@
 
                     <ImageButton
                         android:id="@+id/train"
-                        android:layout_width="75dp"
-                        android:layout_height="75dp"
+                        android:layout_width="126dp"
+                        android:layout_height="72dp"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="15dp"
                         android:layout_weight="1"
@@ -204,7 +204,7 @@
                         android:id="@+id/textView9"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/airplane"
+                        android:layout_below="@id/instButton"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="10dp"
                         android:text="Instructions"
@@ -214,7 +214,7 @@
                         app:fontFamily="sans-serif-light" />
 
                     <ImageButton
-                        android:id="@+id/airplane"
+                        android:id="@+id/instButton"
                         android:layout_width="72dp"
                         android:layout_height="76dp"
                         android:layout_centerHorizontal="true"
