@@ -15,12 +15,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         search =(ImageButton)findViewById(R.id.bus1);
-        search.setOnClickListener(new View.OnClickListener()   {
+        search.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v)  {
 
-                Intent intent = new Intent(MainActivity.this,
+                Intent i = new Intent(MainActivity.this,
                         MapsActivity.class);
-                startActivity(intent);
+                startActivity(i);
 
 
             }
