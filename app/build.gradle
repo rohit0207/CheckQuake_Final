@@ -41,8 +41,4 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     compile 'com.dubsmash.volley:library:2.0.1'
-    implementation platform('com.google.firebase:firebase-bom:28.0.0')
-    implementation 'com.google.firebase:firebase-analytics'
 }
-
-apply plugin: 'com.google.gms.google-services'

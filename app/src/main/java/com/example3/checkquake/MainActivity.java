@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
+import com.example3.checkquake.ACTIVITIES.MapsActivity;
+
 public class MainActivity extends AppCompatActivity {
     ImageButton search;
     ImageButton instButton;
