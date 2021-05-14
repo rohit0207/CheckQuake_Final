@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "760293234366",
+    "project_id": "checkquake-88ca1",
+    "storage_bucket": "checkquake-88ca1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:760293234366:android:0387f5765384e79df9b0ef",
+        "android_client_info": {
+          "package_name": "com.example3.checkquake"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "760293234366-3q1228qlrbipasbo190u7lcop9nq9f96.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example3.checkquake",
+            "certificate_hash": "505b6540825bdc82684d5968f436f750fcc1f62b"
+          }
+        },
+        {
+          "client_id": "760293234366-chk548el5u11hb6cps3tkceh1efjfdns.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDcFXYAwF6Gi2Qa0EjPscBlOBmnV19LksI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "760293234366-chk548el5u11hb6cps3tkceh1efjfdns.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
