@@ -44,6 +44,10 @@
             android:name=".instructions"
             android:label="Instructions">
         </activity>
+        <activity
+            android:name=".ACTIVITIES.Quakes_list_activities"
+            android:label="Earthquake List">
+        </activity>
     </application>
 
 </manifest>

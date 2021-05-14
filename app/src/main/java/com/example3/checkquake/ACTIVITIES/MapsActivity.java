@@ -15,10 +15,12 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -63,8 +65,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
         showListBtn = (Button) findViewById(R.id.showListBtn);
@@ -314,7 +315,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                         detailsUrl = geoJsonObj.getString("url");
 
-
                     }
 
 
@@ -324,6 +324,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
+
+
 
             }
         }, new Response.ErrorListener() {
@@ -336,6 +338,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
     }
+
 
     public void getmoredetails(String url){
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,
