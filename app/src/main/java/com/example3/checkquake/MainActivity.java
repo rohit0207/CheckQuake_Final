@@ -12,6 +12,7 @@ import com.example3.checkquake.ACTIVITIES.MapsActivity;
 public class MainActivity extends AppCompatActivity {
     ImageButton search;
     ImageButton instButton;
+    ImageButton sos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +21,14 @@ public class MainActivity extends AppCompatActivity {
 
         search = (ImageButton)findViewById(R.id.bus1);
         instButton = (ImageButton)findViewById(R.id.instButton);
+        sos = (ImageButton)findViewById(R.id.cycle);
+
+        sos.setOnClickListener(new View.OnClickListener()   {
+            public void onClick(View v)  {
+                Intent intent = new Intent(MainActivity.this, SOS.class);
+                startActivity(intent);
+            }
+        });
 
         search.setOnClickListener(new View.OnClickListener()   {
             public void onClick(View v)  {

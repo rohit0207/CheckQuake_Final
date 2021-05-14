@@ -45,6 +45,10 @@
             android:label="Instructions">
         </activity>
         <activity
+            android:name=".SOS"
+            android:label="SOS">
+        </activity>
+        <activity
             android:name=".ACTIVITIES.Quakes_list_activities"
             android:label="Earthquake List">
         </activity>
