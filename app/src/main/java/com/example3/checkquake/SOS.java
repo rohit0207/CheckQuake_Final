@@ -30,7 +30,7 @@ public class SOS extends AppCompatActivity {
             @Override
             public void onClick(View arg0) {
                 String to = "jeet11chatterjee@gmail.com,rohitmantri0207@gmail.com";
-                String message = "Hi the location of the person is:-------------";
+                String message = "Hi the location of the person is:"+Mylocation.latitude_k+Mylocation.longitude_k;
 
                 Intent email = new Intent(Intent.ACTION_SEND);
                 email.putExtra(Intent.EXTRA_EMAIL, new String[]{to});
