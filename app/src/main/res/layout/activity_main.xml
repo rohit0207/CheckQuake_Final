@@ -18,7 +18,7 @@
             android:layout_height="67dp"
             android:text="CheckQuake"
             android:textColor="#FFFFFF"
-            android:textSize="34sp"
+            android:textSize="32sp"
             android:textStyle="bold"
             app:fontFamily="sans-serif-light"
             app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
