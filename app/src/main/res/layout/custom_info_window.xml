@@ -47,16 +47,15 @@
             android:textStyle="bold" />
 
 
-
-
         <Button
             android:id="@+id/btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/magnitude"
             android:layout_alignBottom="@+id/magnitude"
             android:layout_marginLeft="6dp"
-            android:text="More info ..."/>
+            android:layout_toRightOf="@+id/magnitude"
+            android:text="More info ..."
+            android:visibility="invisible" />
 
 
     </RelativeLayout>
