@@ -33,7 +33,7 @@
             android:name=".ACTIVITIES.MapsActivity"
             android:label="@string/title_activity_maps">
         </activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -43,6 +43,10 @@
         <activity
             android:name=".instructions"
             android:label="Instructions">
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:label="MainActivity">
         </activity>
         <activity
             android:name=".SOS"
