@@ -82,7 +82,7 @@ public class login extends AppCompatActivity {
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
 
                 FirebaseUser user = firebaseAuth.getCurrentUser();
-                username = user.getEmail();
+                username = "abhishek@gmail.com";
 
                 if (user != null) {
 //                    user is signed into Checkquake

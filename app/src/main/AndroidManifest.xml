@@ -49,6 +49,10 @@
             android:label="MainActivity">
         </activity>
         <activity
+            android:name=".chat"
+            android:label="ChatBOT">
+        </activity>
+        <activity
             android:name=".SOS"
             android:label="SOS">
         </activity>

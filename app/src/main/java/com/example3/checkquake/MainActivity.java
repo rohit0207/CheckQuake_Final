@@ -23,12 +23,20 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         t = (TextView)findViewById(R.id.user);
         t.setText(login.username);
+        ImageButton chat=(ImageButton)findViewById(R.id.train);
 
         search = (ImageButton)findViewById(R.id.bus1);
         instButton = (ImageButton)findViewById(R.id.instButton);
         sos = (ImageButton)findViewById(R.id.cycle);
         signout = (ImageButton)findViewById(R.id.signout);
 
+
+        chat.setOnClickListener(new View.OnClickListener()   {
+            public void onClick(View v)  {
+                Intent intent = new Intent(MainActivity.this, chat.class);
+                startActivity(intent);
+            }
+        });
         signout.setOnClickListener(new View.OnClickListener()   {
             public void onClick(View v)  {
                 Intent intent = new Intent(MainActivity.this, login.class);
