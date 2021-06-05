@@ -40,7 +40,7 @@ public class chat extends AppCompatActivity {
         userStatementET = findViewById(R.id.et_user_statement);
         chatDisplayTV.append(
                 Html.fromHtml("<p><b>BOT:</b> " +
-                        "Welcome to checkquake" + "</p>"));
+                        "Welcome to Checkquake" + "</p>"));
 
         //instantiating IBM Watson Conversation Service
 //        myConversationService =
@@ -60,10 +60,66 @@ public class chat extends AppCompatActivity {
                     chatDisplayTV.append(
                             Html.fromHtml("<p><b>YOU:</b> " + userStatement + "</p>")
                     );
+
                     if(userStatement.toLowerCase().equals("hii")){
                         chatDisplayTV.append(
                                 Html.fromHtml("<p><b>BOT:</b> " +
+                                        "Hello, Are you in trouble ?" + "</p>"));
+
+
+                    }
+                    else if(userStatement.toLowerCase().equals("yes")){
+                        chatDisplayTV.append(
+                                Html.fromHtml("<p><b>BOT:</b> " +
+                                        "Are you indoor or outdoor ?" + "</p>"));
+                    }
+
+
+
+                    else if(userStatement.toLowerCase().equals("no")){
+                        chatDisplayTV.append(
+                                Html.fromHtml("<p><b>BOT:</b> " +
+                                        "How can I help You ?" + "</p>"));
+                    }
+
+
+                    else if(userStatement.toLowerCase().equals("outdoor")){
+                        chatDisplayTV.append(
+                                Html.fromHtml("<p><b>BOT:</b> " +
+                                        "Try to find a car and lock the car and close all the windows of the car. Try to find an open area as to stay away from anything that can fall on you" + "</p>"));
+                        chatDisplayTV.append(
+                                Html.fromHtml("<p><b>BOT:</b> " +
+                                        "What are some of your surrounding objects ? " + "</p>"));
+                    }
+
+
+                    else if(userStatement.toLowerCase().equals("indoor")){
+                        chatDisplayTV.append(
+                                Html.fromHtml("<p><b>BOT:</b> " +
+                                        "find a table and go below it, don’t go into the kitchen as things can fall upon you, stay away from the walls as they can fall upon you. Stay away from thing made of glass." + "</p>"));
+                    }
+
+
+
+
+
+                    else if(userStatement.toLowerCase().equals("table")){
+                        chatDisplayTV.append(
+                                Html.fromHtml("<p><b>BOT:</b> " +
+                                        "go below the table" + "</p>"));
+                    }else if(userStatement.toLowerCase().equals("electric pole")){
+                        chatDisplayTV.append(
+                                Html.fromHtml("<p><b>BOT:</b> " +
                                         "Hello" + "</p>"));
+                    }else if(userStatement.toLowerCase().equals("open area")){
+                        chatDisplayTV.append(
+                                Html.fromHtml("<p><b>BOT:</b> " +
+                                        "go in the open area and stay away from everything that might fall\n" + "</p>"));
+                    }
+                    else if(userStatement.toLowerCase().equals("ocean")){
+                        chatDisplayTV.append(
+                                Html.fromHtml("<p><b>BOT:</b> " +
+                                        "Go away as soon as possible as there is a chance of tsunami\n" + "</p>"));
                     }
 
 
