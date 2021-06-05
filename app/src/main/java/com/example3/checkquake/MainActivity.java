@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import com.example3.checkquake.login;
 
 import com.example3.checkquake.ACTIVITIES.MapsActivity;
 
@@ -39,6 +40,11 @@ public class MainActivity extends AppCompatActivity {
         });
         signout.setOnClickListener(new View.OnClickListener()   {
             public void onClick(View v)  {
+                login l = new login();
+//                l.mAuth.getInstance().signOut();
+                if(l.mAuthListner!=null){
+                    l.mAuth.removeAuthStateListener(l.mAuthListner);
+                }
                 Intent intent = new Intent(MainActivity.this, login.class);
                 startActivity(intent);
             }
@@ -64,5 +70,9 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+    @Override
+    public void onBackPressed() {
+// empty so nothing happens
     }
 }

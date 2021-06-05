@@ -1,5 +1,6 @@
 package com.example3.checkquake;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -15,15 +16,40 @@ import android.widget.TextView;
 
 import com.example3.checkquake.ACTIVITIES.MapsActivity;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 
 public class SOS extends AppCompatActivity {
     TextView editTextTo, editTextMessage;
     Button send;
+    FirebaseFirestore fstore;
+    FirebaseAuth fAuth;
+    String userID;
+    String email1;
+    String email2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sos);
+
+        fAuth = FirebaseAuth.getInstance();
+        fstore = FirebaseFirestore.getInstance();
+
+        userID = fAuth.getCurrentUser().getUid();
+
+        DocumentReference documentReference = fstore.collection("users").document(userID);
+        documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(DocumentSnapshot value, FirebaseFirestoreException error) {
+                email1 = value.getString("Num1");
+                email2 = value.getString("Num2");
+            }
+        });
 
 //        editTextMessage = (TextView) findViewById(R.id.textMessage);
 
@@ -33,7 +59,9 @@ public class SOS extends AppCompatActivity {
 
             @Override
             public void onClick(View arg0) {
-                String to = "jeet11chatterjee@gmail.com,rohitmantri0207@gmail.com";
+
+
+                String to = email1+","+email2;
                 String message = "Hi the location of the person is:\n"+Mylocation.latitude_k+" N\n"+Mylocation.longitude_k+" E" ;
 
                 Intent email = new Intent(Intent.ACTION_SEND);

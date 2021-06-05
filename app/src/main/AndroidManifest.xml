@@ -60,6 +60,10 @@
             android:name=".ACTIVITIES.Quakes_list_activities"
             android:label="Earthquake List">
         </activity>
+        <activity
+            android:name=".signup"
+            android:label="Signup">
+        </activity>
     </application>
 
 </manifest>

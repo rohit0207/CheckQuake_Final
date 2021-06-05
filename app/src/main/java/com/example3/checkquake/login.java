@@ -22,10 +22,14 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class login extends AppCompatActivity {
 
+    public SharedPreferences sp;
+
+
+
     private FirebaseDatabase database;
     private DatabaseReference databaseReference;
-    private FirebaseAuth mAuth;
-    private FirebaseAuth.AuthStateListener mAuthListner;
+    public FirebaseAuth mAuth;
+    public FirebaseAuth.AuthStateListener mAuthListner;
     private static final String TAG = "login";
     private EditText email;
     private EditText password;
@@ -33,16 +37,43 @@ public class login extends AppCompatActivity {
     private SharedPreferences preferences;
     public static final String PREFS_NAME = "LoginPrefs";
     public static String username;
+    private Button sign;
 
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
 
+        sp = getSharedPreferences("login",MODE_PRIVATE);
+
+//        if(sp.getBoolean("logged",false)){
+//            goToMainActivity();
+//        }
+//        else{
+//            Intent i = new Intent(login.this,login.class);
+//            startActivity(i);
+//            finish();
+//        }
 
 
+        sign = (Button) findViewById(R.id.signup);
         email = (EditText) findViewById(R.id.email);
         password = (EditText) findViewById(R.id.password);
-        login = (Button) findViewById(R.id.login);
+        login = (Button) findViewById(R.id.signupdata);
+
+        sign.setOnClickListener(new View.OnClickListener()   {
+            public void onClick(View v)  {
+                Intent intent = new Intent(login.this, signup.class);
+                startActivity(intent);
+            }
+        });
+
+//        login.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//                      }
+//            }
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,8 +81,14 @@ public class login extends AppCompatActivity {
                 String emailTxt = email.getText().toString();
                 String passTxt = password.getText().toString();
 
+                if (emailTxt.isEmpty() && passTxt.isEmpty()) {
+                        Toast.makeText(login.this, "Enter all the details", Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(login.this, login.class));
+                    finish();
+                    }
 
-                if (emailTxt != "" && passTxt != "") {
+               else {
+                    Toast.makeText(login.this, "One moment trying to log user in!", Toast.LENGTH_LONG).show();
                     mAuth.signInWithEmailAndPassword(emailTxt, passTxt).addOnCompleteListener(login.this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
@@ -59,6 +96,7 @@ public class login extends AppCompatActivity {
                             if (!task.isSuccessful()) {
                                 Toast.makeText(login.this, "Wrong Credentials", Toast.LENGTH_LONG).show();
                             } else {
+                                sp.edit().putBoolean("logged",true).apply();
                                 Toast.makeText(login.this, "Success!", Toast.LENGTH_LONG).show();
 //                                now write to database
                                 startActivity(new Intent(login.this, MainActivity.class));
@@ -67,6 +105,7 @@ public class login extends AppCompatActivity {
                         }
                     });
                 }
+
             }
         });
 
@@ -106,12 +145,19 @@ public class login extends AppCompatActivity {
         mAuth.addAuthStateListener(mAuthListner);
     }
 
+//    @Override
+//    protected void onStop(){
+//        super.onStop();
+////        mAuth.getInstance().signOut();
+//            mAuth.removeAuthStateListener(mAuthListner);
+//
+//    }
     @Override
-    protected void onStop(){
-        super.onStop();
-
-        if(mAuthListner!=null){
-            mAuth.removeAuthStateListener(mAuthListner);
-        }
+    public void onBackPressed() {
+// empty so nothing happens
+    }
+    public void goToMainActivity(){
+        Intent i = new Intent(this,MainActivity.class);
+        startActivity(i);
     }
 }
