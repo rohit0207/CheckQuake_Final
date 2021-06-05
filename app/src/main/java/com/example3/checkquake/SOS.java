@@ -5,12 +5,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.example3.checkquake.ACTIVITIES.MapsActivity;
+import com.google.android.gms.maps.model.LatLng;
 
 public class SOS extends AppCompatActivity {
     TextView editTextTo, editTextMessage;
@@ -30,7 +34,7 @@ public class SOS extends AppCompatActivity {
             @Override
             public void onClick(View arg0) {
                 String to = "jeet11chatterjee@gmail.com,rohitmantri0207@gmail.com";
-                String message = "Hi the location of the person is:\n"+Mylocation.latitude_k+" N\n"+Mylocation.longitude_k+" E";
+                String message = "Hi the location of the person is:\n"+Mylocation.latitude_k+" N\n"+Mylocation.longitude_k+" E" ;
 
                 Intent email = new Intent(Intent.ACTION_SEND);
                 email.putExtra(Intent.EXTRA_EMAIL, new String[]{to});
